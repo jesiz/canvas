@@ -73,11 +73,7 @@ if(e.keyCode==32){
 })
 
 window.addEventListener("orientationchange", function(e) {
-	var w = screen.width;
-	var h = screen.height;
-	canvas.width =  w*0.8;
-	canvas.height = h*0.8;
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.clearRect(0, 0, w, h);
 })
 
 </script>
