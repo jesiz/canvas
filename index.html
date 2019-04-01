@@ -12,6 +12,12 @@
 <body>
 	<canvas id="canvas"></canvas>
 
+	<div>
+	    <input type="color" id="picker" name="picker"
+	           value="#FF0000">
+	    <label for="picker">choose color</label>
+	</div>
+
 <script>
 var canvas = document.getElementById('canvas');
 canvas.setAttribute('width', window.innerWidth * 0.8);
@@ -56,6 +62,9 @@ if(e.keyCode==66){
 if(e.keyCode==71){
   color = 'green'
 }
+if(e.keyCode==82){
+  color = 'red'
+}
 if(e.keyCode==89){
   color = 'yellow'
 }
@@ -70,10 +79,17 @@ if(e.keyCode==40){
 if(e.keyCode==32){
   ctx.clearRect(0, 0, w, h);
 }
+document.getElementById("picker").value = color;
 })
 
 window.addEventListener("orientationchange", function(e) {
+	w = canvas.height;
+	h = canvas.width;
 	ctx.clearRect(0, 0, w, h);
+})
+
+document.getElementById('picker').addEventListener("input", function(e) {
+		color = this.value;
 })
 
 </script>
