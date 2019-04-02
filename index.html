@@ -83,9 +83,7 @@ document.getElementById("picker").value = color;
 })
 
 window.addEventListener("orientationchange", function(e) {
-	w = canvas.width;
-	h = canvas.height;
-	ctx.clearRect(0, 0, w, h);
+  location.reload()
 })
 
 document.getElementById('picker').addEventListener("input", function(e) {
